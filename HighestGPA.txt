@@ -1,0 +1,4 @@
+Student ID: 2
+First name: Linus
+Last name: Linux
+GPA: 4

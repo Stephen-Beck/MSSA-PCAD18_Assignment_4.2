@@ -35,5 +35,19 @@ namespace Assignment_4._2
             else
                 MessageBox.Show("Invalid login.", "Error", MessageBoxButtons.OK);
         }
+
+        private void lblShowHide_Click(object sender, EventArgs e)
+        {
+            if (lblShowHide.Text == "Show")
+            {
+                txtPassword.UseSystemPasswordChar = false;
+                lblShowHide.Text = "Hide";
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = true;
+                lblShowHide.Text = "Show";
+            }
+        }
     }
 }

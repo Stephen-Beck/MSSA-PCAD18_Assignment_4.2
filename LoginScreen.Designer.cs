@@ -34,6 +34,7 @@
             txtPassword = new TextBox();
             btnLogin = new Button();
             label3 = new Label();
+            lblShowHide = new Label();
             SuspendLayout();
             // 
             // label1
@@ -65,7 +66,7 @@
             // 
             txtPassword.Location = new Point(73, 73);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(169, 23);
+            txtPassword.Size = new Size(136, 23);
             txtPassword.TabIndex = 3;
             txtPassword.UseSystemPasswordChar = true;
             // 
@@ -89,11 +90,22 @@
             label3.Text = "Welcome to Learning Management System!\r\nPlease log in.\r\n";
             label3.TextAlign = ContentAlignment.TopCenter;
             // 
+            // lblShowHide
+            // 
+            lblShowHide.Location = new Point(209, 73);
+            lblShowHide.Name = "lblShowHide";
+            lblShowHide.Size = new Size(38, 23);
+            lblShowHide.TabIndex = 6;
+            lblShowHide.Text = "Show";
+            lblShowHide.TextAlign = ContentAlignment.MiddleCenter;
+            lblShowHide.Click += lblShowHide_Click;
+            // 
             // LoginScreen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(251, 130);
+            Controls.Add(lblShowHide);
             Controls.Add(label3);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
@@ -116,5 +128,6 @@
         private TextBox txtPassword;
         private Button btnLogin;
         private Label label3;
+        private Label lblShowHide;
     }
 }

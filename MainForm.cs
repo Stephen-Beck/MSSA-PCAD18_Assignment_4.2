@@ -144,7 +144,7 @@ namespace Assignment_4._2
 
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                DialogResult messageBox = MessageBox.Show("Are you sure you want to delete this contact?", "Delete Confirmation", MessageBoxButtons.YesNo);
+                DialogResult messageBox = MessageBox.Show("Are you sure you want to delete this student?", "Delete Confirmation", MessageBoxButtons.YesNo);
                 if (messageBox == DialogResult.Yes)
                 {
                     // Get Student ID of selected student
@@ -207,7 +207,7 @@ namespace Assignment_4._2
             txtFirstName.Text = student.FirstName;
             txtLastName.Text = student.LastName;
             txtStudentID.Text = student.ID.ToString();
-            txtGPA.Text = student.GPA.ToString();
+            txtGPA.Text = student.GPA.ToString("N1");
         }
 
         private void ChangeAddButton(object sender, EventArgs e)
@@ -216,7 +216,11 @@ namespace Assignment_4._2
             if (!studentDict.ContainsKey(studentID) || String.IsNullOrEmpty(txtStudentID.Text))
                 btnAddUpdate.Text = "Add Student";
             else
+            {
                 btnAddUpdate.Text = "Update Student";
+                Student student = studentDict.GetValueOrDefault(Convert.ToUInt32(txtStudentID.Text));
+                dataGridView1.Rows[students.IndexOf(student)].Selected = true;
+            }
         }
     }
 }
